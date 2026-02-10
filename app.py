@@ -62,6 +62,26 @@ if st.button("Predict Depression Risk"):
             "The prediction is influenced by **protective factors such as "
             "better sleep quality, regular exercise, and lower stress levels**."
         )
+        
+    # ---- BIOLOGICAL INTERPRETATION ----
+st.markdown("### 🧬 Biological Interpretation")
+
+if prob >= threshold:
+    st.markdown("""
+    - **High stress levels** → HPA axis hyperactivation → Elevated cortisol  
+    - **Poor sleep quality** → Circadian rhythm disruption → Melatonin suppression  
+    - **Increased screen time** → Dopaminergic reward pathway dysregulation  
+    - **Low physical activity** → Reduced BDNF and serotonin signaling  
+    - **Social withdrawal** → Reduced oxytocin-mediated social bonding  
+    """)
+else:
+    st.markdown("""
+    - **Lower stress levels** → Balanced HPA axis function  
+    - **Good sleep quality** → Stable circadian rhythm and melatonin release  
+    - **Regular physical activity** → Enhanced BDNF and serotonin levels  
+    - **Social interaction** → Healthy oxytocin signaling  
+    """)
+
 
 
     
