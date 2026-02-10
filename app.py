@@ -64,19 +64,7 @@ if st.button("Predict Depression Risk"):
         )
 
 
-    # --- SIMPLE EXPLANATION ---
-    st.markdown("### 🧠 Explanation of Prediction")
-
-    if prob > 0.6:
-        st.write(
-            "The model predicts a higher risk mainly due to **high stress levels, "
-            "poor sleep quality, and increased screen time**."
-        )
-    else:
-        st.write(
-            "The model predicts a lower risk due to **better sleep quality, "
-            "regular exercise, and controlled screen usage**."
-        )
+    
 
     # --- FEATURE CONTRIBUTION PLOT (FAST & DIFFERENT BARS) ---
     st.markdown("### 📊 Feature Contributions")
