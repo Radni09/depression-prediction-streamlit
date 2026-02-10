@@ -36,15 +36,19 @@ input_data = np.array([
 if st.button("Predict Depression Risk"):
     input_scaled = scaler.transform(input_data)
 
-    pred = model.predict(input_scaled)[0]
+    
     prob = model.predict_proba(input_scaled)[0][1]
 
     st.subheader("🔍 Prediction Result")
 
-    if pred == 1:
-        st.error(f"High risk of depression (Probability: {prob:.2f})")
-    else:
-        st.success(f"Low risk of depression (Probability: {prob:.2f})")
+    # Custom threshold
+threshold = 0.4   # you can explain this in viva
+
+if prob >= threshold:
+    st.error(f"High risk of depression (Probability: {prob:.2f})")
+else:
+    st.success(f"Low risk of depression (Probability: {prob:.2f})")
+
 
     # --- SIMPLE EXPLANATION ---
     st.markdown("### 🧠 Explanation of Prediction")
