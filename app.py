@@ -65,6 +65,8 @@ if st.button("Predict Depression Risk"):
         
     # ---- BIOLOGICAL INTERPRETATION ----
 st.markdown("### 🧬 Biological Interpretation")
+prob = model.predict_proba(input_scaled)[0][1]
+threshold = 0.4
 
 if prob >= threshold:
     st.markdown("""
